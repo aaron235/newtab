@@ -1,0 +1,16 @@
+body {
+	margin-left: 15%;
+	margin-right: 15%;
+	font-family: "Alegreya Sans";
+}
+
+h1 {
+	font-weight: bold;
+}
+
+#time,
+#date {
+	-webkit-font-feature-settings: 'tnum';
+	-moz-font-feature-settings: 'tnum';
+	-ms-font-feature-settings: 'tnum';
+}
