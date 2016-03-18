@@ -14,6 +14,11 @@ function getTime() {
 	if ( hours > 12 ) {
 		hours -= 12;
 		meridiem = "PM";
+	} else if ( hours == 12 ) {
+		meridiem = "PM";
+	} else if ( hours == 0 ) {
+		hours = 12;
+		meridiem = "AM";
 	}
 
 	if ( minutes < 10 ) {

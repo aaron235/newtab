@@ -1,4 +1,4 @@
-#!/home/aaron/Code/NewTab/venv/bin/python
+#!/home/aaron/Code/newtab/venv/bin/python
 
 import sys
 import getopt
