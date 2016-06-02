@@ -16,7 +16,7 @@ function getTime() {
 		meridiem = "PM";
 	} else if ( hours == 12 ) {
 		meridiem = "PM";
-	} else if ( hours == 0 ) {
+	} else if ( hours === 0 ) {
 		hours = 12;
 		meridiem = "AM";
 	}
@@ -83,7 +83,7 @@ function getDate() {
 	}
 
 	day = days[day];
-	month = months[month];
+	month = months[month-1];
 
 	return day + ", " + month + " " + dateStr + ", " + year;
 }
@@ -95,7 +95,7 @@ function getSalutation() {
 		return "Good morning!";
 	} else if ( hour >= 12 && hour <= 17 ) {
 		return "Good afternoon!";
-	} else if ( hour >= 18 && hour <= 23 || hour == 0 ) {
+	} else if ( hour >= 18 && hour <= 23 || hour === 0 ) {
 		return "Good evening!";
 	} else {
 		return "Go to sleep.";
@@ -108,10 +108,10 @@ function updateDateInfo() {
 	document.getElementById( 'date' ).innerHTML = getDate();
 }
 
-window.onload = function() {
+window.addLoadFunction( function() {
 	updateDate();
 	updateDateInfo();
 
 	window.setInterval( updateDate, 500 );
 	window.setInterval( updateDateInfo, 500 );
-};
+} );
